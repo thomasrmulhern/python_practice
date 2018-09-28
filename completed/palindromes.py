@@ -1,11 +1,13 @@
 def is_pal1(word):
     '''
-    check if string is palindrome reversing the whole word
-    Examples:
-    tacocat == True
-    taco cat == True
-    A Toyota! Race fast, safe car! A Toyota! == True
-    soccer == False
+    (str) -> bool
+    Check if string is palindrome reversing the whole word
+    >>> is_pal1('tacocat')
+    True
+    >>> is_pal1('A Toyota! Race fast, safe car! A Toyota!')
+    True
+    is_pal1('soccer')
+    False
     '''
     import re
     s_word = word.strip(' ').lower().replace(' ', '')
@@ -19,12 +21,14 @@ def is_pal1(word):
 
 def is_pal2(word):
     '''
-    check if string is palindrome only reversing the second half of the word
-    Examples:
-    tacocat == True
-    taco cat == True
-    A Toyota! Race fast, safe car! A Toyota! == True
-    soccer == False
+    (str) -> bool
+    Check if string is palindrome only reversing the second half of the word
+    >>> is_pal2('tacocat')
+    True
+    >>> is_pal2('A Toyota! Race fast, safe car! A Toyota!')
+    True
+    is_pal2('soccer')
+    False
     '''
     import re
     s_word = word.strip(' ').lower().replace(' ', '')
@@ -46,12 +50,14 @@ def is_pal2(word):
 
 def is_pal3(word):
     '''
-    check if string is palindrome checking opposite character pairs for half the length of the string
-    Examples:
-    tacocat == True
-    taco cat == True
-    A Toyota! Race fast, safe car! A Toyota! == True
-    soccer == False
+    (str) -> bool
+    Check if string is palindrome comparing opposite character pairs for half the length of the string
+    >>> is_pal3('tacocat')
+    True
+    >>> is_pal3('A Toyota! Race fast, safe car! A Toyota!')
+    True
+    is_pal3('soccer')
+    False
     '''
     import re
     s_word = word.strip(' ').lower().replace(' ', '')
