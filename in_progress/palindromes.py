@@ -93,11 +93,12 @@ def is_pal3_refactor(word):
     import re
     s_word = word.strip(' ').lower().replace(' ', '')       # prep string
     s_word = re.sub(r'[^\w\s]','',s_word)                   # clean punctuation
-    if len(s_word) % 2 == 0:
-        for _ in range(len(s_word)//2) if len(s_word) % 2 == 0 and _ in range((len(s_word)-1)//2) if len(s_word) % 2 != 0:
-            for x,y in zip(s_word, s_word[::-1])
-                if x != y:
-                    print(word, 'is NOT a palindrome')
-                    return False
-        print(word, 'IS a palindrome')
-        return True
+    i = 0                                                   # init first of two index points
+    j = len(s_words)                                        # init second of two index points
+    while i < j and s[i] == s[j]:                           # compare indexed string chars until index points have crossed
+        i = i + 1
+        j = j - 1
+    if i < j:                                               # if index points have crossed, sting is a palindrome
+        print (word, 'IS a palindrome')
+    else:                                                   # if the loop breaks prior it is not a palindrome
+        print(word, 'is NOT a palindrome')
