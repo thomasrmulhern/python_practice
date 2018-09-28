@@ -78,3 +78,27 @@ def is_pal3(word):
                     return False
         print(word, 'IS a palindrome')
         return True
+
+def is_pal3_refactor(word):
+    '''
+    (str) -> bool
+    Check if string is palindrome comparing opposite character pairs for half the length of the string
+    >>> is_pal3('tacocat')
+    True
+    >>> is_pal3('A Toyota! Race fast, safe car! A Toyota!')
+    True
+    is_pal3('soccer')
+    False
+    '''
+    import re
+    s_word = word.strip(' ').lower().replace(' ', '')       # prep string
+    s_word = re.sub(r'[^\w\s]','',s_word)                   # clean punctuation
+    i = 0                                                   # init first of two index points
+    j = len(s_words)                                        # init second of two index points
+    while i < j and s[i] == s[j]:                           # compare indexed string chars until index points have crossed
+        i = i + 1
+        j = j - 1
+    if i < j:                                               # if index points have crossed, sting is a palindrome
+        print (word, 'IS a palindrome')
+    else:                                                   # if the loop breaks prior it is not a palindrome
+        print(word, 'is NOT a palindrome')
